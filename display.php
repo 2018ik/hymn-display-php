@@ -24,10 +24,16 @@
               console.log(xhr);
               if (xhr.status === 200) {
                 var hymnNumbers = xhr.responseText;
-                var parts = hymnNumbers.split(',');
-                document.getElementById("engKorean").innerText = parts[0];
-                document.getElementById("chinese").innerText = parts[1] != '' ? parts[1] : '-';
-                document.getElementById("spanish").innerText = parts[2] != '' ? parts[2] : '-';
+                if hymnNumbers === null {
+                  document.getElementById("engKorean").innerText = '-';
+                  document.getElementById("chinese").innerText = '-';
+                  document.getElementById("spanish").innerText = '-';
+                } else {
+                  var parts = hymnNumbers.split(',');
+                  document.getElementById("engKorean").innerText = parts[0];
+                  document.getElementById("chinese").innerText = parts[1] != '' ? parts[1] : '-';
+                  document.getElementById("spanish").innerText = parts[2] != '' ? parts[2] : '-';
+                }
               } else {
                 console.log("error: " + xhr.error);
               }
@@ -109,7 +115,7 @@
           </span>
           <hr/>
           <span id = 'engKorean'>
-          <?php echo $_POST['number'] ?? 'Not Submitted Yet'; ?>
+          -
           </span>
         </div>
         <div class="langSection" id="spanishSection"> 
@@ -118,7 +124,7 @@
           </span>
           <hr/>
           <span id = 'spanish'>
-            
+          -
           </span>
         </div>
         <div class="langSection" id="chineseSection">
@@ -127,7 +133,7 @@
           </span>
           <hr/>
           <span id = 'chinese'>
-    
+          -
           </span>
         </div>
       </div>
