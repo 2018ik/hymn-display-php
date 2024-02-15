@@ -43,8 +43,10 @@
         <button id='form' input type = 'submit' class="btn btn-secondary" >Change display</button>
       </form>
     </div>
-   
     </div>
+
+    <a id='display-button' class="btn btn-secondary" href="/display.php" >Go to display</a>
+      
     <script>
       // handle number submission
       document.getElementById("numberForm").addEventListener("submit", function(event) {

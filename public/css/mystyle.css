@@ -41,3 +41,8 @@ hr{
   display: none !important;
   width: 0% !important;
 }
+
+#display-button{
+  margin-top: 20px;
+  background-color: #012060;
+}
