@@ -23,7 +23,7 @@
               console.log(xhr);
               if (xhr.status === 200) {
                 var hymnNumbers = xhr.responseText;
-                if (hymnNumbers === null) {
+                if (hymnNumbers === "null") {
                   document.getElementById("engKorean").innerText = '-';
                   document.getElementById("chinese").innerText = '-';
                   document.getElementById("spanish").innerText = '-';
