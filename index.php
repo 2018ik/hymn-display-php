@@ -12,7 +12,6 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   </head>
 
-  <script src="/socket.io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
   <body>
     <header
