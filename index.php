@@ -46,35 +46,36 @@
     </div>
 
     <a id='display-button' class="btn btn-secondary" href="/display.php" >Go to display</a>
-      
+
     <script>
       // handle number submission
       document.getElementById("numberForm").addEventListener("submit", function(event) {
           event.preventDefault();
           var formData = new FormData(this);
           var xhr = new XMLHttpRequest();
-          xhr.open("POST", "process.php", true);
+          xhr.open("POST", "change_number.php", true);
           xhr.onreadystatechange = function() {
               if (xhr.readyState === XMLHttpRequest.DONE) {
                   console.log(xhr);
-                  if (xhr.status !== 200) {
-                    alert("error: " + xhr.error)
+                  if (xhr.response != "") {
+                    alert("Error: " + xhr.responseText)
                   }
               }
           };
           xhr.send(formData);
+          document.getElementById("number").value = "";
       });
       // handle language submission
       document.getElementById("langForm").addEventListener("submit", function(event) {
           event.preventDefault();
           var formData = new FormData(this);
           var xhr = new XMLHttpRequest();
-          xhr.open("POST", "process.php", true);
+          xhr.open("POST", "change_language.php", true);
           xhr.onreadystatechange = function() {
               if (xhr.readyState === XMLHttpRequest.DONE) {
                   console.log(xhr);
-                  if (xhr.status !== 200) {
-                    alert("error: " + xhr.error)
+                  if (xhr.response != "") {
+                    alert("Error: " + xhr.responseText)
                   }
               }
           };
