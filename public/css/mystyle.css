@@ -43,6 +43,11 @@ hr{
 }
 
 #display-button{
-  margin-top: 20px;
+  margin-top: 15px;
+  background-color: #012060;
+}
+
+#clear-display-button{
+  margin-top: 15px;
   background-color: #012060;
 }

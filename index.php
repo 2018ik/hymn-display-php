@@ -22,16 +22,17 @@
 
     <div class="col-lg-4">
       <h1>Hymns</h1>
-      <form id="numberForm" action="/display.php">
+      <form id="numberForm">
         <div class="form-group">
           <label for="number">Hymn Number</label>
           <input type="number" pattern="\d* "id="number" name="number" class="form-control" placeholder="1-1348" min = "1" max = "1348" style='width:20em' autofocus required/>
         </div>
         <button id='form' input type = 'submit' class="btn btn-secondary" >Submit</button>
       </form>
+      <button id='clear-display-button' class="btn btn-secondary" >Clear Number</button>
       <br />
       <br />
-      <form id="langForm" action="/display.php">
+      <form id="langForm">
         <div class="form-group">
           <label for="language">Languages shown</label>
           <select id="language" name="language" class="form-control" style='width:20em'>
@@ -81,6 +82,20 @@
           };
           xhr.send(formData);
       });
+      // handle clear
+      document.getElementById('clear-display-button').addEventListener('click', function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'clear_number.php', true);
+            xhr.onreadystatechange = function() {
+              if (xhr.readyState === XMLHttpRequest.DONE) {
+                  console.log(xhr);
+                  if (xhr.response != "") {
+                    alert("Error: " + xhr.responseText)
+                  }
+              }
+            };
+            xhr.send();
+        });
     </script>
   </body>
 
